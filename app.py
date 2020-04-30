@@ -46,7 +46,7 @@ def precip():
     last_year_date = dt.datetime.strptime(last_date, "%Y-%m-%d") - dt.timedelta(days=366)
 
     # Perform a query to retrieve the data and precipitation scores
-    results = query = session.query(Measurement.date, Measurement.prcp).\
+    results = session.query(Measurement.date, Measurement.prcp).\
         filter(Measurement.date >= last_year_date).all()
 
     rain_season = []
